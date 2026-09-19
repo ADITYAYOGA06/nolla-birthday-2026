@@ -1,0 +1,257 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Segoe UI', sans-serif;
+  overflow: hidden;
+  height: 100vh;
+  background: linear-gradient(135deg, #fff8fb, #ffd6e7, #ffc2d1);
+  background-size: 400% 400%;
+  animation: gradientMove 12s ease infinite;
+}
+
+@keyframes gradientMove {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
+
+.page {
+  position: absolute;
+  inset: 0;
+  display: none;
+  align-items: center;
+  justify-content: center;
+  padding: 24px;
+}
+
+.heart {
+    text-align: center;
+    font-size: 72px;
+    margin-top: 10px;
+    margin-bottom: 30px;
+    animation: pulse 1.2s infinite;
+}
+
+@keyframes pulse {
+  0% { transform: scale(1); }
+  50% { transform: scale(1.2); }
+  100% { transform: scale(1); }
+}
+
+.page.active {
+  display: flex;
+  animation: fadeIn 0.8s ease;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.card {
+  width: 100%;
+  max-width: 680px;
+  background: rgba(255, 255, 255, 0.45);
+  backdrop-filter: blur(16px);
+  border: 1px solid rgba(255,255,255,0.5);
+  border-radius: 28px;
+  padding: 36px;
+  text-align: center;
+  box-shadow: 0 10px 40px rgba(232, 180, 199, 0.25);
+}
+
+.card.large {
+  max-height: 90vh;
+  overflow-y: auto;
+}
+
+h1, h2 {
+  color: #b76e79;
+  margin-bottom: 16px;
+}
+
+.subtitle {
+  color: #7a5c65;
+  margin-bottom: 20px;
+  line-height: 1.7;
+}
+
+p {
+  color: #6d4c56;
+  line-height: 1.8;
+  margin-bottom: 16px;
+}
+
+button {
+  margin-top: 16px;
+  background: linear-gradient(135deg, #ffc2d1, #e8b4c7);
+  color: white;
+  border: none;
+  padding: 14px 28px;
+  border-radius: 999px;
+  font-size: 16px;
+  cursor: pointer;
+  transition: 0.3s ease;
+  box-shadow: 0 8px 20px rgba(232, 180, 199, 0.35);
+}
+
+button:hover {
+  transform: translateY(-2px) scale(1.02);
+}
+
+video {
+  width: 100%;
+  border-radius: 20px;
+  margin: 20px 0;
+  box-shadow: 0 8px 24px rgba(0,0,0,0.08);
+}
+
+.gallery {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+  gap: 14px;
+  margin-top: 20px;
+}
+
+.gallery img {
+  width: 100%;
+  aspect-ratio: 1/1;
+  object-fit: cover;
+  border-radius: 18px;
+  transition: 0.3s ease;
+  box-shadow: 0 6px 18px rgba(0,0,0,0.08);
+}
+
+.gallery img:hover {
+  transform: scale(1.05);
+}
+
+.floating-hearts::before,
+.floating-hearts::after {
+  content: '❤';
+  position: absolute;
+  color: rgba(255,255,255,0.7);
+  font-size: 22px;
+  animation: float 10s linear infinite;
+}
+
+.floating-hearts::after {
+  left: 80%;
+  animation-delay: 5s;
+}
+
+@keyframes float {
+  from {
+    transform: translateY(100vh);
+    opacity: 0;
+  }
+  20% { opacity: 1; }
+  to {
+    transform: translateY(-20vh);
+    opacity: 0;
+  }
+}
+
+@media (max-width: 480px) {
+  .card {
+    padding: 24px;
+    border-radius: 24px;
+  }
+
+  h1 {
+    font-size: 28px;
+  }
+}
+
+/* ===== Floating Love Sparkles ===== */
+
+.floating-hearts {
+  position: fixed;
+  inset: 0;
+  overflow: hidden;
+  pointer-events: none;
+  z-index: 0;
+}
+
+.floating-hearts span {
+  position: absolute;
+  bottom: -40px;
+  color: rgba(255, 255, 255, 0.85);
+  text-shadow: 0 0 8px rgba(255,255,255,0.9),
+               0 0 18px rgba(255,192,203,0.8);
+  animation: floatUp linear infinite;
+  user-select: none;
+}
+
+.floating-hearts span:nth-child(1)  { left: 5%;  font-size: 14px; animation-duration: 9s;  animation-delay: 0s; }
+.floating-hearts span:nth-child(2)  { left: 12%; font-size: 20px; animation-duration: 11s; animation-delay: 2s; }
+.floating-hearts span:nth-child(3)  { left: 20%; font-size: 16px; animation-duration: 8s;  animation-delay: 1s; }
+.floating-hearts span:nth-child(4)  { left: 28%; font-size: 24px; animation-duration: 13s; animation-delay: 4s; }
+.floating-hearts span:nth-child(5)  { left: 36%; font-size: 18px; animation-duration: 10s; animation-delay: 3s; }
+.floating-hearts span:nth-child(6)  { left: 44%; font-size: 14px; animation-duration: 12s; animation-delay: 6s; }
+.floating-hearts span:nth-child(7)  { left: 52%; font-size: 22px; animation-duration: 9s;  animation-delay: 5s; }
+.floating-hearts span:nth-child(8)  { left: 60%; font-size: 16px; animation-duration: 14s; animation-delay: 1s; }
+.floating-hearts span:nth-child(9)  { left: 68%; font-size: 26px; animation-duration: 11s; animation-delay: 7s; }
+.floating-hearts span:nth-child(10) { left: 76%; font-size: 18px; animation-duration: 10s; animation-delay: 2s; }
+.floating-hearts span:nth-child(11) { left: 84%; font-size: 15px; animation-duration: 13s; animation-delay: 4s; }
+.floating-hearts span:nth-child(12) { left: 92%; font-size: 23px; animation-duration: 9s;  animation-delay: 0.5s; }
+.floating-hearts span:nth-child(13) { left: 52%; font-size: 96px; animation-duration: 21s;  animation-delay: 5s; }
+
+@keyframes floatUp {
+  0% {
+    transform: translateY(0) scale(0.8) rotate(0deg);
+    opacity: 0;
+  }
+  10% {
+    opacity: 1;
+  }
+  50% {
+    transform: translateY(-45vh) scale(1) rotate(8deg);
+  }
+  100% {
+    transform: translateY(-110vh) scale(1.15) rotate(-12deg);
+    opacity: 0;
+  }
+}
+
+/* Sparkle twinkle effect */
+.floating-hearts span::after {
+  content: '✦';
+  position: absolute;
+  top: -10px;
+  right: -10px;
+  font-size: 10px;
+  color: rgba(255,255,255,0.9);
+  animation: twinkle 1.8s ease-in-out infinite;
+}
+
+@keyframes twinkle {
+  0%, 100% {
+    opacity: 0.3;
+    transform: scale(0.8);
+  }
+  50% {
+    opacity: 1;
+    transform: scale(1.4);
+  }
+}
+
+/* Pastikan card di atas animasi */
+.page {
+  z-index: 1;
+}
+
+.card {
+  position: relative;
+  z-index: 2;
+}

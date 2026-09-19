@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Nolla's 25th Birthday 🎂</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+  <!-- Musik -->
+  <audio id="bgMusic" loop>
+    <source src="assets/song/birthday-song-piano2.mpeg" type="audio/mpeg">
+  </audio>
+
+  <!-- Floating hearts & sparkles -->
+  <div class="floating-hearts">
+    <span>❤</span>
+    <span>❤</span>
+    <span>❤</span>
+    <span>❤</span>
+    <span>❤</span>
+    <span>❤</span>
+    <span>❤</span>
+    <span>❤</span>
+    <span>❤</span>
+    <span>❤</span>
+    <span>❤</span>
+    <span>❤</span>
+    <span>❤</span>
+    <span>❤</span>
+    <span>❤</span>
+    <span>❤</span>
+    <span>❤</span>
+    <span>❤</span>
+    <span>❤</span>
+    <span>❤</span>
+    <span>❤</span>
+    <span>❤</span>
+    <span>❤</span>
+    <span>❤</span>
+  </div>
+
+  <!-- Section 1 -->
+  <section class="page active" id="page1">
+    <div class="card">
+      <div class="heart">🩷</div>
+      <h1>Happy Birthday Nolla 🎂</h1>
+      <p class="subtitle">Untuk perempuan yang paling berarti dalam hidupku 💕</p>
+      <button onclick="nextPage(1)">Buka Ucapan</button>
+    </div>
+  </section>
+
+  <!-- Section 2 -->
+  <section class="page" id="page2">
+    <div class="card large">
+      <h2>Ucapan & Harapanku 💌</h2>
+      <p>
+        Hari ini adalah hari yang sangat spesial karena dunia pernah menghadirkan kamu.
+        Terima kasih sudah hadir, bertahan, dan jadi bagian dari perjalanan hidupku.
+      </p>
+      <p>
+        Aku harap di usia yang baru ini kamu selalu diberi kesehatan, kebahagiaan,
+        ketenangan hati, dan dikelilingi oleh orang-orang yang benar-benar sayang sama kamu.
+      </p>
+      <p>
+        Semoga setiap langkahmu dimudahkan, setiap impianmu menemukan jalannya,
+        dan semoga aku bisa terus ada di sampingmu untuk menemani hari-harimu,
+        baik saat kamu bahagia maupun saat dunia terasa berat.
+      </p>
+      <p>
+        Terima kasih untuk semua senyum, perhatian, dan kasih sayang yang sudah kamu berikan.
+        Kamu lebih berharga daripada yang kamu bayangkan 🤍
+      </p>
+
+      <button onclick="nextPage(2)">Next</button>
+    </div>
+  </section>
+
+  <!-- Section 3 -->
+  <!-- <section class="page" id="page3">
+    <div class="card large">
+      <h2>Video Untukmu 🎥</h2>
+      <video controls>
+         <source src="assets/video/birthday25Nolla.mp4" type="video/mp4">
+      </video>
+      <button onclick="nextPage(3)">Next</button>
+    </div>
+  </section> -->
+
+
+<section class="page" id="page3">
+  <div class="card large">
+    <h2>Video Untukmu 🎥</h2>
+
+    <div class="mt-6">
+      <iframe
+          src="https://www.youtube-nocookie.com/embed/LqgJXPav8ew"
+          title="Video Untukmu"
+          frameborder="0"
+          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+          allowfullscreen>
+      </iframe>
+      <br>
+      <a
+        href="https://drive.google.com/uc?export=download&id=1wzQZODa_E5eAW9Svmo0vhdSTM3dUKSrB"
+        target="_blank"
+        class="mt-4 inline-flex items-center justify-center w-full px-4 py-3 rounded-xl bg-pink-500 text-white font-semibold"
+      >Download Video</a>
+    </div>
+
+    <button onclick="nextPage(3)">Next</button>
+  </div>
+</section>
+
+
+
+  <!-- Section 4 -->
+  <section class="page" id="page4">
+    <div class="card large">
+      <h2>Memori Kita 📸</h2>
+      <div class="gallery">
+        <img src="assets/image/1.jpeg" alt="">
+        <img src="assets/image/2.jpeg" alt="">
+        <img src="assets/image/3.jpeg" alt="">
+        <img src="assets/image/4.jpeg" alt="">
+      </div>
+      <button onclick="nextPage(4)">Next</button>
+    </div>
+  </section>
+
+  <!-- Section 5 -->
+  <section class="page" id="page5">
+    <div class="card">
+      <h1>Terima Kasih Sudah Hadir 💖</h1>
+      <p class="subtitle">
+        Semoga ulang tahun ini menjadi awal dari banyak hal baik yang akan datang.
+      </p>
+      <p class="subtitle">I love you 🤍</p>
+      <button onclick="goToStart()">Kembali ke Awal</button>
+    </div>
+  </section>
+
+  <script src="script.js"></script>
+</body>
+</html>

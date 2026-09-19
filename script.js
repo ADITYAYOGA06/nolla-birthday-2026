@@ -9,15 +9,25 @@ function showPage(pageNumber) {
 }
 
 function nextPage(current) {
+    const music = document.getElementById('bgMusic');
+
   // Mulai musik saat interaksi pertama
   if (!musicStarted) {
-    const music = document.getElementById('bgMusic');
     console.log('playing music in background');
     music.play().catch(() => {});
     musicStarted = true;
   }
 
-  showPage(current + 1);
+  const next = current + 1;
+
+  if (next === 3) {
+    music.pause();
+    music.currentTime = 0; // opsional: reset lagu ke awal
+  }else{
+    music.play().catch(() => {});
+  }
+
+  showPage(next);
 }
 
 function goToStart() {
